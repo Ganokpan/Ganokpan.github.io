@@ -18,10 +18,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/templatemo-topic-listing.css" rel="stylesheet">
-    <!--
-TemplateMo 590 topic listing
-https://templatemo.com/tm-590-topic-listing
--->
 </head>
 
 <body id="top">
@@ -72,12 +68,16 @@ https://templatemo.com/tm-590-topic-listing
         <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-8 col-12 mx-auto">
-                        <h1 class="text-white text-center">Hi I'm Ganokpan &#129414;</h1>
+                        <!--
+                        สำหรับข้อความแบบพิมพ์ js อยู่หน้า script.js เรีนกใช้ผ่าน id
+                        <div class="typewriter">
+                            I am <span id="typing"></span>
+                        </div>-->
+                        <h1 class="text-white text-center" id="typewriter">I'm <span id="typing"></span> &#128187;
+                        </h1>
                         <h6 class="text-center">First I coded. Then I no-coded. Now I'm debugging both.</h6>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -278,7 +278,7 @@ https://templatemo.com/tm-590-topic-listing
                             <!--งานที่อยู่ใน Low code/No Code-->
                             <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel"
                                 aria-labelledby="design-tab" tabindex="0">
-                                <div class="row">
+                                <div class="row gy-4">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p>
@@ -311,7 +311,7 @@ https://templatemo.com/tm-590-topic-listing
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
                                             <div class="d-flex">
@@ -326,10 +326,7 @@ https://templatemo.com/tm-590-topic-listing
                                             </p>
                                         </div>
                                     </div>
-                                </div>
-                                <!--แถว 2 Low code -->
-                                <br>
-                                <div class="row">
+                                    <!--แถว 2 Low code -->
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
@@ -362,7 +359,7 @@ https://templatemo.com/tm-590-topic-listing
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
                                             <div class="d-flex">
@@ -412,8 +409,8 @@ https://templatemo.com/tm-590-topic-listing
                                                 <span class="badge bg-finance rounded-pill ms-auto">8</span>
                                             </div>
 
-                                            <img src="images/project/line api.png"
-                                                class="custom-block-image img-fluid" alt="">
+                                            <img src="images/project/line api.png" class="custom-block-image img-fluid"
+                                                alt="">
                                             </p>
                                         </div>
                                     </div>
@@ -450,8 +447,8 @@ https://templatemo.com/tm-590-topic-listing
                                                     </div>
                                                     <span class="badge bg-advertising rounded-pill ms-auto">10</span>
                                                 </div>
-                                                <img src="images/project/tact.png"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="images/project/tact.png" class="custom-block-image img-fluid"
+                                                    alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -478,7 +475,7 @@ https://templatemo.com/tm-590-topic-listing
                             <div class="tab-pane fade" id="education-tab-pane" role="tabpanel"
                                 aria-labelledby="education-tab" tabindex="0">
                                 <!--Dashboard แถวที่ 1-->
-                                <div class="row">
+                                <div class="row gy-4">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p>
@@ -489,12 +486,11 @@ https://templatemo.com/tm-590-topic-listing
                                                 </div>
                                                 <span class="badge bg-design rounded-pill ms-auto">12</span>
                                             </div>
-                                            <img src="images/project/powerbi.png"
-                                                class="custom-block-image img-fluid" alt="">
+                                            <img src="images/project/powerbi.png" class="custom-block-image img-fluid"
+                                                alt="">
                                             </p>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
@@ -510,8 +506,7 @@ https://templatemo.com/tm-590-topic-listing
                                             </p>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
                                             <div class="d-flex">
@@ -526,11 +521,8 @@ https://templatemo.com/tm-590-topic-listing
                                             </p>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!--Dashboard แถวที่ 2-->
-                                <br>
-                                <div class="row">
+                                    <!--Dashboard แถวที่ 2-->
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p>
@@ -541,14 +533,12 @@ https://templatemo.com/tm-590-topic-listing
                                                 </div>
                                                 <span class="badge bg-design rounded-pill ms-auto">15</span>
                                             </div>
-                                            <img src="images/project/maindash.png"
-                                                class="custom-block-image img-fluid" alt="">
+                                            <img src="images/project/maindash.png" class="custom-block-image img-fluid"
+                                                alt="">
                                             </p>
                                         </div>
                                     </div>
-
-
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
                                             <div class="d-flex">
@@ -563,7 +553,6 @@ https://templatemo.com/tm-590-topic-listing
                                             </p>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
                                             <p href="topics-detail.html">
@@ -579,10 +568,9 @@ https://templatemo.com/tm-590-topic-listing
                                             </p>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -802,6 +790,7 @@ https://templatemo.com/tm-590-topic-listing
 
 
     <!-- JAVASCRIPT FILES -->
+    <script src="js/script.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.sticky.js"></script>

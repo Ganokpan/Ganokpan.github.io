@@ -1,146 +1,179 @@
 :root {
-    --background: white;
-    --text-color: #4f4f4f;
-    --primary-color: #4f4f4f;
-    --secondary-color: #797979;
-    --border-color: rgb(159, 159, 159);
+    /* ตัวแปรสี */
+    --text-color: #1c2b68;
+    --primary-color: #7182c7;
+    --secondary-color: #8c9ddf;
+    --remind-color: #e53935;
+
+    /* สี Glassmorphism */
+    --background-gradient-start: #a1c4fd;
+    --background-gradient-end: #c2e9fb;
+    --glass-bg: rgba(255, 255, 255, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --input-bg: rgba(255, 255, 255, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-    font-family: 'Inter', sans-serif;
+    font-family: "Mitr", sans-serif;
     color: var(--text-color);
 }
 
+/* พื้นหลังแบบ Gradient*/
 body {
     min-height: 100vh;
-    background-color: var(--background);
+    background-image: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 10px;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container Glassmorphism*/
+.todo-container {
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 h1 {
-    font-size: clamp(1.25rem, 5vw, 2rem);
-    text-align: left;
-
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.todo-container {
-    width: 400px;
-    height: auto;
-    padding: 10px;
-}
-
-/*.todo-container{
-    padding: 10px;
-    min-width: 200px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}*/
 
 form {
     display: flex;
-    justify-content: center;
-    gap: 6px;
-    align-items: center;
-    padding: 1rem 0;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 #todo-input {
-    min-width: 200px;
     width: 100%;
-    height: 42px;
-    border-bottom: 1px solid var(--border-color);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
+    height: 50px;
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    background: var(--input-bg);
+    font-size: 1rem;
+    font-family: "Mitr", sans-serif;
+    padding: 0 1rem;
+    color: var(--text-color);
+    transition: box-shadow 0.3s ease;
+}
+
+#todo-input::placeholder {
+    color: var(--secondary-color);
 }
 
 #todo-input:focus {
     outline: none;
+    box-shadow: 0 0 0 3px rgba(113, 130, 199, 0.5);
 }
 
 #add-todo {
-    width: 40px;
-    height: 40px;
-    padding: 2px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.75rem;
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;
-}
-
-#add-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-todo:hover {
+    background-color: var(--text-color);
+    transform: scale(1.05);
 }
 
 #todo-list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
-    gap: 8px;
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
+/* To-Do List */
 .todo-item {
-    border: 1px solid var(--border-color);
-    padding: 0.75rem;
-    display: flex;
     width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    display: flex;
     align-items: center;
-    border-radius: 1rem;
+    gap: 1rem;
+    background: var(--input-bg);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(31, 38, 135, 0.15);
 }
 
 .todo-text {
-    width: 100%;
-    text-align: left;
+    flex-grow: 1;
     font-size: 1rem;
-    font-weight: 600
+    font-weight: 500;
 }
 
 input[type="checkbox"] {
+    flex-shrink: 0;
     width: 1.25rem;
     height: 1.25rem;
     cursor: pointer;
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
+    accent-color: var(--primary-color); /* เปลี่ยนสีติ๊กถูก */
 }
 
-input[type="checkbox"]:checked~.todo-text {
+input[type="checkbox"]:checked + .todo-text {
     text-decoration: line-through;
     color: var(--secondary-color);
-}
-
-.delete-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 0.8;
 }
 
 .delete-button {
+    flex-shrink: 0;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    color: var(--remind-color);
+    background-color: rgba(229, 57, 53, 0.1);
 }
 
 .remaining-todo {
-    font-weight: 600;
-    font-style: italic;
-    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.remain {
+    color: var(--remind-color);
+    font-weight: 700;
 }
